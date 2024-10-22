@@ -5,7 +5,9 @@ import personnages.Romain;
 public class Gaulois {
 	private String nom;
 	private int force;
+	private int nbTrophees;
 	private int effetPotion;
+	private Equipement[] trophees = new Equipement[100];
 	
 	public Gaulois(String nom, int force) {
 		this.nom = nom;
@@ -26,16 +28,20 @@ public class Gaulois {
 	}
 	
 	public void parler(String message) {
-		System.out.println(prefixeParole() + " : « " + message + " »");
+		System.out.println(prendreParole() + " : « " + message + " »");
 	}
 
-	private String prefixeParole() {
-		return "[Gaulois " + nom + "]";
+	private String prendreParole() {
+		return "Le gaulois " + nom + " : ";
 	}
-
+	
 	public void frapper(Romain romain) {
-		System.out.println("[Le Gaulois " + nom + " envoie un grand coup dans la mâchoire de " + romain.getNom() + "]");
-		romain.recevoirCoup(effetPotion * (force / 3));
+		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
+		Equipement[] equipementRomain = romain.recevoirCoup((force / 3) * effetPotion);
+		
+		for (int i = 0; equipementRomain != null && i < equipementRomain.length; i++, nbTrophees++) {
+			this.trophees[nbTrophees] = equipementRomain[i];
+		}
 	}
 	
 	public void boirePotion(int forcePotion) {

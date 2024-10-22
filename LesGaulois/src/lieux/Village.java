@@ -65,7 +65,7 @@ public class Village {
 	
 	public static void main(String[] args) {
 		Village village = new Village("Village des Irréductibles Gaulois", 30);
-//		village.trouverHabitant(30); 
+//		En faisant "village.trouverHabitant(30);" : 
 		/*
 		 * ^ On obtient cette erreur :
 		 *   Exception in thread "main"
