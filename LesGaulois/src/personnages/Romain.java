@@ -48,7 +48,7 @@ public class Romain {
 	}
 
 	public void sEquiper(Equipement equipement) {
-		String debutMessage = "Le soldat " + getNom()
+		String debutMessage = "Le soldat " + getNom();
 		String nomEquipement;
 		if (equipement == Equipement.BOUCLIER) {
 			nomEquipement = "un bouclier";
@@ -65,7 +65,7 @@ public class Romain {
 		}
 		
 		System.out.println(debutMessage + " s'équipe avec " + nomEquipement + ".");
-		this.equipements[nbEquipement] = equipement;
+		equipements[nbEquipement] = equipement;
 		nbEquipement += 1;
 	}
 	

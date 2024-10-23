@@ -21,12 +21,12 @@ public class Village {
 	}
 	
 	public void ajouterHabitant(Gaulois gaulois) {
-		this.villageois[nbVillageois] = gaulois;
+		villageois[nbVillageois] = gaulois;
 		nbVillageois += 1;
 	}
 	
 	public Gaulois trouverHabitant(int place) {
-		return this.villageois[place];
+		return villageois[place];
 	}
 	
 	public void afficherVillageois() {
